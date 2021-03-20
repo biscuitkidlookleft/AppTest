@@ -1,17 +1,20 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-android-extensions'
+    id 'kotlin-kapt'
 }
 
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
 
     defaultConfig {
         applicationId "com.biscuitkid.apptest"
-        minSdkVersion 21
-        targetSdkVersion 29
+        minSdkVersion 16
+        targetSdkVersion 30
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -40,4 +43,27 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    def retrofit_version = '2.5.0'
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
+
+    def life_cycle_version = '2.1.0'
+    implementation "androidx.lifecycle:lifecycle-extensions:$life_cycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$life_cycle_version"
+
+    def constraint_layout_version = '2.0.4'
+    implementation "androidx.constraintlayout:constraintlayout:$constraint_layout_version"
+
+    def koin_version = "2.0.1"
+    implementation "org.koin:koin-core:$koin_version"
+    implementation "org.koin:koin-core-ext:$koin_version"
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-androidx-scope:$koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+    implementation "org.koin:koin-androidx-ext:$koin_version"
+    implementation "org.koin:koin-test:$koin_version"
+
+    implementation "com.android.support:recyclerview-v7:30.0.0"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 }
