@@ -8,7 +8,7 @@ import com.biscuitkid.apptest.R
 import com.biscuitkid.apptest.model.User
 import kotlinx.android.synthetic.main.item_user.view.*
 
-class UserAdapter(): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class UserAdapter: RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var mOnItemClickListener : OnItemClickListener? = null
     private var list =  listOf<User>()
 
